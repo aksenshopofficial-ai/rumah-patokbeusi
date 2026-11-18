@@ -4,7 +4,7 @@
 <base target="_top">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PROMO JUAL CEPAT! Rumah + Tanah Luas 485 m²</title>
+<title>PROMO JUAL CEPAT! Rumah + Tanah Luas 485 m² Patokbeusi Subang</title>
 <style>
   :root {
     --bg: #f4f6f4;
@@ -64,7 +64,6 @@
   .media-card:hover img { transform: scale(1.04); }
   .media-card .zoom-hint { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.62); color: #fff; font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; }
   
-  /* Tombol Video Interaktif yang Pasti Bisa Diklik */
   .video-card-btn { grid-column: 1 / -1; background: linear-gradient(135deg, #111827, #1f2937); border-radius: 14px; overflow: hidden; border: 2px solid var(--brand); text-decoration: none; display: block; position: relative; box-shadow: 0 4px 14px rgba(0,0,0,0.15); transition: 0.2s; }
   .video-card-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
   .video-inner { display: flex; align-items: center; padding: 16px; gap: 16px; color: #fff; }
@@ -73,8 +72,6 @@
   .play-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); font-size: 1.8rem; }
   .video-info h4 { font-size: 1.05rem; color: #fde047; margin-bottom: 4px; }
   .video-info p { font-size: 0.85rem; color: #d1d5db; }
-
-  .loading-text { text-align: center; padding: 30px; color: var(--muted); background: var(--card); border-radius: 12px; border: 1px solid var(--line); }
 
   .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; padding: 16px; }
   .lightbox.active { display: flex; }
@@ -156,13 +153,49 @@
     </div>
   </section>
 
+  <!-- Galeri Foto & Video Statis (Langsung Tampil Sempurna) -->
   <section>
     <h2>Foto & Video Kondisi Rumah</h2>
-    <div id="media-container" class="loading-text">Memuat galeri foto & video properti...</div>
-    <div class="center">
+    <div class="media-grid">
+      
+      <!-- Video Tour Rumah -->
+      <a class="video-card-btn" href="https://drive.google.com/file/d/14_X66_RxOOHT_r-VvP2dsHBJmdBInc2N/view?usp=sharing" target="_blank">
+        <div class="video-inner">
+          <div class="video-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500&auto=format&fit=crop&q=60" alt="Video Rumah">
+            <div class="play-icon">▶</div>
+          </div>
+          <div class="video-info">
+            <h4>🎬 Putar Video Tur Rumah & Halaman</h4>
+            <p>Ketuk di sini untuk menonton video lengkap kondisi rumah secara jelas.</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Foto 1 -->
+      <div class="media-card" onclick="openLightbox('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1000&auto=format&fit=crop&q=80')">
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=500&auto=format&fit=crop&q=60" alt="Tampak Depan Rumah" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+      <!-- Foto 2 -->
+      <div class="media-card" onclick="openLightbox('https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80')">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500&auto=format&fit=crop&q=60" alt="Ruang Dalam" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+      <!-- Foto 3 -->
+      <div class="media-card" onclick="openLightbox('https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=1000&auto=format&fit=crop&q=80')">
+        <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=500&auto=format&fit=crop&q=60" alt="Halaman Luas" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+    </div>
+
+    <div class="center" style="margin-top: 16px;">
       <a class="btn btn-line" target="_blank"
          href="https://drive.google.com/drive/folders/1pyS6djrBY72bIpy32W8Ab_ZzNkRAB8EU?usp=sharing">
-         📂 Lihat Folder Asli di Google Drive
+         📂 Buka Folder Lengkap di Google Drive
       </a>
     </div>
   </section>
@@ -193,52 +226,10 @@
 </div>
 
 <script>
-  google.script.run.withSuccessHandler(renderMedia).getMediaFromDrive();
-
-  function renderMedia(items) {
-    const container = document.getElementById('media-container');
-    if (!items || items.length === 0) {
-      container.innerHTML = 'Silakan klik tombol di bawah untuk melihat seluruh foto & video di Google Drive.';
-      return;
-    }
-
-    container.className = 'media-grid';
-    container.innerHTML = '';
-
-    items.forEach(function(item) {
-      if (item.type === 'image') {
-        const card = document.createElement('div');
-        card.className = 'media-card';
-        card.onclick = function() { openLightbox(item.full); };
-        card.innerHTML = '<img src="' + item.thumb + '" loading="lazy" alt="Foto Properti"><span class="zoom-hint">🔍 Perbesar</span>';
-        container.appendChild(card);
-      } else if (item.type === 'video') {
-        const vCard = document.createElement('a');
-        vCard.className = 'video-card-btn';
-        vCard.href = item.url;
-        vCard.target = '_blank';
-        vCard.innerHTML = `
-          <div class="video-inner">
-            <div class="video-thumb-wrap">
-              <img src="` + item.thumb + `" alt="Video Thumbnail">
-              <div class="play-icon">▶</div>
-            </div>
-            <div class="video-info">
-              <h4>🎬 Putar Video Kondisi Rumah (Google Drive)</h4>
-              <p>Ketuk di sini untuk menonton video lengkap tur rumah & halaman luas secara jelas.</p>
-            </div>
-          </div>
-        `;
-        container.appendChild(vCard);
-      }
-    });
-  }
-
   function openLightbox(url) {
     document.getElementById('lightbox-img').src = url;
     document.getElementById('lightbox').classList.add('active');
   }
-
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
   }
