@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<base target="_top">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROMO JUAL CEPAT! Rumah + Tanah Luas 485 m²</title>
+<style>
+  :root {
+    --bg: #f4f6f4;
+    --card: #ffffff;
+    --text: #1a261f;
+    --muted: #58665e;
+    --brand: #156b40;
+    --brand-light: #e8f5ee;
+    --accent: #f59e0b;
+    --danger: #dc2626;
+    --line: #e2e8e4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; padding-bottom: 85px; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+
+  .top-promo { background: #111827; color: #fde047; text-align: center; font-size: 0.85rem; font-weight: 700; padding: 9px 12px; letter-spacing: 0.3px; }
+
+  header { background: linear-gradient(145deg, #115734 0%, #1f8a54 100%); color: #fff; padding: 42px 0 68px; text-align: center; }
+  .badge { display: inline-block; background: var(--accent); color: #111827; font-weight: 800; padding: 5px 16px; border-radius: 99px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+  header h1 { font-size: clamp(1.65rem, 5vw, 2.5rem); line-height: 1.25; margin-bottom: 12px; font-weight: 800; }
+  header p { opacity: 0.94; font-size: 1.02rem; max-width: 650px; margin: 0 auto; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-weight: 700; border-radius: 12px; padding: 14px 26px; transition: 0.2s; cursor: pointer; border: none; font-size: 1rem; }
+  .btn-wa { background: #22c55e; color: #fff; box-shadow: 0 6px 16px rgba(34, 197, 94, 0.32); margin-top: 22px; }
+  .btn-wa:hover { background: #16a34a; transform: translateY(-1px); }
+  .btn-line { border: 2px solid var(--brand); color: var(--brand); background: #fff; padding: 11px 20px; font-size: 0.92rem; }
+  .btn-line:hover { background: var(--brand); color: #fff; }
+
+  .prices { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: -42px; }
+  .price { background: var(--card); border-radius: 16px; padding: 22px 20px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.08); border: 2px solid transparent; position: relative; }
+  .price.featured { border-color: var(--accent); background: #fffdf7; }
+  .price .tag-best { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--danger); color: #fff; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 99px; text-transform: uppercase; white-space: nowrap; }
+  .price small { color: var(--muted); display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 2px; }
+  .price .old-price { text-decoration: line-through; color: #9ca3af; font-size: 0.95rem; display: block; }
+  .price b { font-size: 1.95rem; color: var(--brand); display: block; line-height: 1.2; margin: 4px 0; }
+  .price span.note { font-size: 0.8rem; color: var(--muted); display: block; }
+
+  section { padding: 36px 0 10px; }
+  h2 { font-size: 1.38rem; margin-bottom: 16px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+  h2::before { content: ""; display: inline-block; width: 5px; height: 22px; background: var(--brand); border-radius: 4px; }
+
+  .promo-box { background: var(--brand-light); border: 1.5px dashed var(--brand); border-radius: 14px; padding: 20px; margin-top: 26px; }
+  .promo-box h3 { color: var(--brand); font-size: 1.12rem; margin-bottom: 10px; }
+  .promo-list { list-style: none; display: grid; gap: 8px; }
+  .promo-list li { font-size: 0.95rem; padding-left: 24px; position: relative; }
+  .promo-list li::before { content: "🎁"; position: absolute; left: 0; top: 0; }
+
+  .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+  .spec { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .spec span { display: block; font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 2px; }
+  .spec strong { font-size: 1.02rem; color: var(--text); }
+
+  .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+  .media-card { background: var(--card); border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 2px 8px rgba(0,0,0,0.04); cursor: pointer; position: relative; aspect-ratio: 4/3; }
+  .media-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+  .media-card:hover img { transform: scale(1.04); }
+  .media-card .zoom-hint { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.62); color: #fff; font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; }
+  
+  /* Tombol Video Interaktif yang Pasti Bisa Diklik */
+  .video-card-btn { grid-column: 1 / -1; background: linear-gradient(135deg, #111827, #1f2937); border-radius: 14px; overflow: hidden; border: 2px solid var(--brand); text-decoration: none; display: block; position: relative; box-shadow: 0 4px 14px rgba(0,0,0,0.15); transition: 0.2s; }
+  .video-card-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+  .video-inner { display: flex; align-items: center; padding: 16px; gap: 16px; color: #fff; }
+  .video-thumb-wrap { position: relative; width: 120px; height: 75px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #000; }
+  .video-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+  .play-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); font-size: 1.8rem; }
+  .video-info h4 { font-size: 1.05rem; color: #fde047; margin-bottom: 4px; }
+  .video-info p { font-size: 0.85rem; color: #d1d5db; }
+
+  .loading-text { text-align: center; padding: 30px; color: var(--muted); background: var(--card); border-radius: 12px; border: 1px solid var(--line); }
+
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; padding: 16px; }
+  .lightbox.active { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 88vh; border-radius: 8px; object-fit: contain; }
+  .lightbox-close { position: absolute; top: 18px; right: 20px; background: #fff; color: #111; border: none; width: 38px; height: 38px; border-radius: 50%; font-size: 1.3rem; font-weight: bold; cursor: pointer; }
+
+  .cta { background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); border-radius: 16px; padding: 32px 20px; text-align: center; border: 1.5px solid #bbf7d0; margin-top: 10px; }
+  .cta h2 { justify-content: center; margin-bottom: 8px; }
+  .cta h2::before { display: none; }
+  .center { text-align: center; margin-top: 18px; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 28px 0 20px; }
+
+  .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; padding: 10px 16px; box-shadow: 0 -4px 14px rgba(0,0,0,0.1); z-index: 99; display: flex; justify-content: center; }
+  .sticky-bar a { width: 100%; max-width: 600px; background: #22c55e; color: #fff; text-align: center; text-decoration: none; font-weight: 700; padding: 13px 18px; border-radius: 10px; font-size: 0.98rem; }
+
+  @media (max-width: 520px) {
+    .media-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .media-card { aspect-ratio: 1/1; }
+    .specs { grid-template-columns: 1fr; }
+    .video-inner { flex-direction: column; text-align: center; }
+    .video-thumb-wrap { width: 100%; height: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-promo">🔥 PROMO JUAL CEPAT LANGSUNG PEMILIK — NEGO SAMPAI JADI!</div>
+
+<header>
+  <div class="wrap">
+    <span class="badge">Harga Turun • Tanah Super Luas</span>
+    <h1>Dijual Rumah + Tanah Luas 485 m² di Patokbeusi, Subang</h1>
+    <p>Halaman super luas hampir 500 m², 3 kamar tidur, akses masuk mobil, lingkungan asri & siap huni.</p>
+    <a class="btn btn-wa" target="_blank"
+       href="https://wa.me/62895605051234?text=Halo%2C%20saya%20tertarik%20dengan%20promo%20rumah%20dijual%20(tanah%20485%20m%C2%B2)%20di%20Patokbeusi%20Subang.%20Boleh%20minta%20info%20detail%20%26%20jadwal%20survei%3F">
+       💬 Chat Pemilik via WhatsApp
+    </a>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="prices">
+    <div class="price featured">
+      <span class="tag-best">Paling Hemat</span>
+      <small>Harga Non Furnish (Kosongan)</small>
+      <span class="old-price">Rp 175 Juta</span>
+      <b>Rp 150 Juta</b>
+      <span class="note">Masih bisa nego langsung saat survei!</span>
+    </div>
+    <div class="price">
+      <small>Harga Full Furnish (Siap Bawa Koper)</small>
+      <span class="old-price">Rp 185 Juta</span>
+      <b>Rp 160 Juta</b>
+      <span class="note">Termasuk perabotan & kelengkapan rumah</span>
+    </div>
+  </div>
+
+  <div class="promo-box">
+    <h3>✨ Keuntungan Khusus Pembeli Bulan Ini:</h3>
+    <ul class="promo-list">
+      <li><strong>Tanpa Perantara (Langsung Pemilik):</strong> Bebas biaya komisi agen, harga jauh lebih hemat.</li>
+      <li><strong>Bonus Lahan Super Luas 485 m²:</strong> Hitungannya hanya Rp 300 ribuan/m² sudah dapat bangunan rumah 3 kamar tidur!</li>
+      <li><strong>Fleksibel Nego di Tempat:</strong> Silakan cek lokasi langsung, cocok harga langsung transaksi.</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>Spesifikasi Lengkap Properti</h2>
+    <div class="specs">
+      <div class="spec"><span>Lokasi</span><strong>Jl. Jungklang, Rancaasih, Patokbeusi, Subang</strong></div>
+      <div class="spec"><span>Luas Tanah</span><strong>485 m² (Sangat Luas & Lega)</strong></div>
+      <div class="spec"><span>Luas Bangunan</span><strong>40 m² (1 Lantai)</strong></div>
+      <div class="spec"><span>Kamar Tidur</span><strong>3 Kamar Tidur</strong></div>
+      <div class="spec"><span>Kamar Mandi</span><strong>1 Kamar Mandi</strong></div>
+      <div class="spec"><span>Legalitas</span><strong>Akta Jual Beli (AJB) Aman</strong></div>
+      <div class="spec"><span>Akses & Parkir</span><strong>Masuk Mobil + Kanopi Luas</strong></div>
+      <div class="spec"><span>Potensi Lahan</span><strong>Cocok Hunian, Kebun, Gudang / Garasi</strong></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Foto & Video Kondisi Rumah</h2>
+    <div id="media-container" class="loading-text">Memuat galeri foto & video properti...</div>
+    <div class="center">
+      <a class="btn btn-line" target="_blank"
+         href="https://drive.google.com/drive/folders/1pyS6djrBY72bIpy32W8Ab_ZzNkRAB8EU?usp=sharing">
+         📂 Lihat Folder Asli di Google Drive
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="cta">
+      <h2>Jangan Sampai Keduluan Pembeli Lain!</h2>
+      <p style="color:var(--muted); max-width:540px; margin:0 auto;">Rumah dengan tanah seluas hampir 500 m² di harga 150 jutaan sangat jarang ada. Hubungi kami untuk tanya detail atau kirim titik lokasi (Shareloc).</p>
+      <a class="btn btn-wa" target="_blank"
+         href="https://wa.me/62895605051234?text=Halo%2C%20saya%20ingin%20tanya%20detail%20dan%20minta%20shareloc%20rumah%20dijual%20tanah%20485%20m%C2%B2%20di%20Patokbeusi.">
+         📲 Hubungi WhatsApp Sekarang (0895-6050-51234)
+      </a>
+    </div>
+  </section>
+</div>
+
+<footer>© 2026 Penjualan Langsung Pemilik • Patokbeusi, Subang</footer>
+
+<div class="sticky-bar">
+  <a target="_blank" href="https://wa.me/62895605051234?text=Halo%2C%20saya%20tertarik%20dengan%20rumah%20dijual%20(tanah%20485%20m%C2%B2).%20Boleh%20minta%20info%20lebih%20lanjut%3F">
+    💬 Tanya Detail & Nego via WhatsApp
+  </a>
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightbox-img" src="" alt="Preview Foto Properti">
+</div>
+
+<script>
+  google.script.run.withSuccessHandler(renderMedia).getMediaFromDrive();
+
+  function renderMedia(items) {
+    const container = document.getElementById('media-container');
+    if (!items || items.length === 0) {
+      container.innerHTML = 'Silakan klik tombol di bawah untuk melihat seluruh foto & video di Google Drive.';
+      return;
+    }
+
+    container.className = 'media-grid';
+    container.innerHTML = '';
+
+    items.forEach(function(item) {
+      if (item.type === 'image') {
+        const card = document.createElement('div');
+        card.className = 'media-card';
+        card.onclick = function() { openLightbox(item.full); };
+        card.innerHTML = '<img src="' + item.thumb + '" loading="lazy" alt="Foto Properti"><span class="zoom-hint">🔍 Perbesar</span>';
+        container.appendChild(card);
+      } else if (item.type === 'video') {
+        const vCard = document.createElement('a');
+        vCard.className = 'video-card-btn';
+        vCard.href = item.url;
+        vCard.target = '_blank';
+        vCard.innerHTML = `
+          <div class="video-inner">
+            <div class="video-thumb-wrap">
+              <img src="` + item.thumb + `" alt="Video Thumbnail">
+              <div class="play-icon">▶</div>
+            </div>
+            <div class="video-info">
+              <h4>🎬 Putar Video Kondisi Rumah (Google Drive)</h4>
+              <p>Ketuk di sini untuk menonton video lengkap tur rumah & halaman luas secara jelas.</p>
+            </div>
+          </div>
+        `;
+        container.appendChild(vCard);
+      }
+    });
+  }
+
+  function openLightbox(url) {
+    document.getElementById('lightbox-img').src = url;
+    document.getElementById('lightbox').classList.add('active');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+</script>
+
+</body>
+</html>
