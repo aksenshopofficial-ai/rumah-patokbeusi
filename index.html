@@ -62,17 +62,6 @@
   .media-card:hover img { transform: scale(1.04); }
   .media-card .zoom-hint { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.62); color: #fff; font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; }
   
-  .video-card-btn { grid-column: 1 / -1; background: linear-gradient(135deg, #111827, #1f2937); border-radius: 14px; overflow: hidden; border: 2px solid var(--brand); text-decoration: none; display: block; position: relative; box-shadow: 0 4px 14px rgba(0,0,0,0.15); transition: 0.2s; }
-  .video-card-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
-  .video-inner { display: flex; align-items: center; padding: 16px; gap: 16px; color: #fff; }
-  .video-thumb-wrap { position: relative; width: 120px; height: 75px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: #000; }
-  .video-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
-  .play-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); font-size: 1.8rem; }
-  .video-info h4 { font-size: 1.05rem; color: #fde047; margin-bottom: 4px; }
-  .video-info p { font-size: 0.85rem; color: #d1d5db; }
-
-  .loading-text { text-align: center; padding: 30px; color: var(--muted); background: var(--card); border-radius: 12px; border: 1px solid var(--line); }
-
   .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999; align-items: center; justify-content: center; padding: 16px; }
   .lightbox.active { display: flex; }
   .lightbox img { max-width: 100%; max-height: 88vh; border-radius: 8px; object-fit: contain; }
@@ -84,15 +73,13 @@
 
   footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 28px 0 20px; }
 
-  .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; padding: 10px 16px; box-shadow: 0 -4px 14px rgba(0,0,0,0.1); z-index: 99; display: flex; justify-content: center; }
+  .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; padding: 10px 16px; box-shadow: -4px 14px rgba(0,0,0,0.1); z-index: 99; display: flex; justify-content: center; }
   .sticky-bar a { width: 100%; max-width: 600px; background: #22c55e; color: #fff; text-align: center; text-decoration: none; font-weight: 700; padding: 13px 18px; border-radius: 10px; font-size: 0.98rem; }
 
   @media (max-width: 520px) {
     .media-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .media-card { aspect-ratio: 1/1; }
     .specs { grid-template-columns: 1fr; }
-    .video-inner { flex-direction: column; text-align: center; }
-    .video-thumb-wrap { width: 100%; height: 140px; }
   }
 </style>
 </head>
@@ -152,10 +139,54 @@
     </div>
   </section>
 
-  <!-- Galeri Foto & Video -->
+  <!-- Galeri Foto Asli dari Repository GitHub -->
   <section>
-    <h2>Foto & Video Kondisi Rumah</h2>
-    <div id="media-container" class="loading-text">Sedang memuat galeri properti...</div>
+    <h2>Foto Asli Kondisi Rumah & Lahan</h2>
+    <div class="media-grid">
+      
+      <!-- Tampak Depan -->
+      <div class="media-card" onclick="openLightbox('Tampak Depan.png')">
+        <img src="Tampak Depan.png" alt="Tampak Depan" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+      <!-- Halaman -->
+      <div class="media-card" onclick="openLightbox('Halaman.jpg')">
+        <img src="Halaman.jpg" alt="Halaman Luas" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+      <!-- Ruang Depan -->
+      <div class="media-card" onclick="openLightbox('Ruang Depan.jpg')">
+        <img src="Ruang Depan.jpg" alt="Ruang Depan" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+      <!-- Ruang Tengah -->
+      <div class="media-card" onclick="openLightbox('Ruang tengah.jpg')">
+        <img src="Ruang tengah.jpg" alt="Ruang Tengah" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+      <!-- Dapur -->
+      <div class="media-card" onclick="openLightbox('Dapur.jpg')">
+        <img src="Dapur.jpg" alt="Dapur" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+      <!-- Kamar Depan -->
+      <div class="media-card" onclick="openLightbox('Kamar Depan.jpg')">
+        <img src="Kamar Depan.jpg" alt="Kamar Depan" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+      <!-- Kamar Mandi -->
+      <div class="media-card" onclick="openLightbox('Kamar Mandii.jpg')">
+        <img src="Kamar Mandii.jpg" alt="Kamar Mandi" loading="lazy">
+        <span class="zoom-hint">🔍 Perbesar</span>
+      </div>
+
+    </div>
   </section>
 
   <section>
@@ -184,32 +215,6 @@
 </div>
 
 <script>
-  window.addEventListener('DOMContentLoaded', function() {
-    const container = document.getElementById('media-container');
-    container.className = 'media-grid';
-    container.innerHTML = `
-      <!-- Tombol Video Utama -->
-      <a class="video-card-btn" href="https://drive.google.com/file/d/14_X66_RxOOHT_r-VvP2dsHBJmdBInc2N/view?usp=sharing" target="_blank">
-        <div class="video-inner">
-          <div class="video-thumb-wrap">
-            <img src="https://lh3.googleusercontent.com/d/14_X66_RxOOHT_r-VvP2dsHBJmdBInc2N" alt="Video Rumah">
-            <div class="play-icon">▶</div>
-          </div>
-          <div class="video-info">
-            <h4>🎬 Putar Video Tur Rumah & Halaman</h4>
-            <p>Ketuk di sini untuk menonton video lengkap kondisi rumah di Google Drive.</p>
-          </div>
-        </div>
-      </a>
-
-      <!-- Foto Properti -->
-      <div class="media-card" onclick="openLightbox('https://lh3.googleusercontent.com/d/14_X66_RxOOHT_r-VvP2dsHBJmdBInc2N')">
-        <img src="https://lh3.googleusercontent.com/d/14_X66_RxOOHT_r-VvP2dsHBJmdBInc2N" alt="Foto Properti" loading="lazy">
-        <span class="zoom-hint">🔍 Perbesar</span>
-      </div>
-    `;
-  });
-
   function openLightbox(url) {
     document.getElementById('lightbox-img').src = url;
     document.getElementById('lightbox').classList.add('active');
