@@ -5,6 +5,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PROMO JUAL CEPAT! Rumah + Tanah Luas 485 m² Patokbeusi Subang</title>
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MZZ7ZS7G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<!-- End Google Tag Manager -->
 <style>
   :root {
     --bg: #f4f6f4;
@@ -222,6 +230,16 @@
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('active');
   }
+  // Pelacakan klik WhatsApp ke dataLayer untuk Google Tag Manager
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('a[href*="wa.me"]');
+    if (!link) return;
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'klik_tombol_whatsapp',
+      wa_url: link.href
+    });
+  });
 </script>
 
 </body>
